@@ -16,7 +16,7 @@ public class Quantumizer extends JavaPlugin {
 	 */
 	private boolean active = false;
 	
-	
+	private Mode mode = Mode.LSD;
 	
 	@Override
 	public void onEnable(){

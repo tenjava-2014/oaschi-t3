@@ -15,9 +15,9 @@ public class PlayerStareEvent extends Event{
 	/**
 	 * The object the player stares at.
 	 */
-	private Metadatable obj;
+	private Metadatable target;
 	
-	public PlayerStareEvent(Player player, Metadatable obj){
+	public PlayerStareEvent(Player player, Metadatable target){
 		
 	}
 
@@ -34,12 +34,12 @@ public class PlayerStareEvent extends Event{
 		this.player = player;
 	}
 
-	public Metadatable getObj() {
-		return obj;
+	public Metadatable getTarget() {
+		return target;
 	}
 
-	public void setObj(Metadatable obj) {
-		this.obj = obj;
+	public void setTarget(Metadatable obj) {
+		this.target = obj;
 	}
 
 }
