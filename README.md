@@ -32,6 +32,10 @@ Usage
 2. Do things with it
 
 This is one uncomplete plugin.
+It was supposed to quantumize your server.
+That means that weird things happen if you stare at a point long enough (Cows transforming into chickens, things cloning themselves randomly being quantum entangled and so on.)
+However, the only thing it does atm is randomly putting glowstone blocks everywhere you look, AMAZING!!
+
 
 <!-- Hi, oaschi! This is the default README for every ten.java submission. -->
 <!-- We encourage you to edit this README with some information about your submission – keep in mind you'll be scored on documentation! -->
