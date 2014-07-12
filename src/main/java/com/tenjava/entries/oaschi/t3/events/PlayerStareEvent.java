@@ -18,13 +18,18 @@ public class PlayerStareEvent extends Event{
 	private Metadatable target;
 	
 	public PlayerStareEvent(Player player, Metadatable target){
-		
+		this.player = player;
+		this.target = target;
 	}
 
 	@Override
 	public HandlerList getHandlers() {
 		return handlers;
 	}
+	
+	public static HandlerList getHandlerList() {
+        return handlers;
+    }
 
 	public Player getPlayer() {
 		return player;

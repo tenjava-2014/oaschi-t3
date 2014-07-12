@@ -9,10 +9,12 @@ import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
 import org.bukkit.util.BlockIterator;
 
+import com.tenjava.entries.oaschi.t3.events.PlayerStareEvent;
+
 public class StalkerTask implements Runnable{
 	private Quantumizer plugin = Quantumizer.plugin;
 	
-	private HashMap<Player, BlockTime> players;
+	private HashMap<Player, BlockTime> players = new HashMap<>();
 	
 	private long startingMillis;
 	private long lastMillis;
@@ -64,7 +66,7 @@ public class StalkerTask implements Runnable{
 		while(iter.hasNext()){
 			block = iter.next();
 			if(block.getType() != Material.AIR){
-				return;
+				break;
 			}
 		}
 		
@@ -76,15 +78,26 @@ public class StalkerTask implements Runnable{
 				long stareTimeMillis = players.get(player).elapsedMillis += elapsed;
 				if(stareTimeMillis >= plugin.getMinTime()){
 					Random r = new Random();
+					int poss = calcBalancedPossibility();
+					if(r.nextInt(poss) == 0){
+						Bukkit.getServer().getPluginManager().callEvent(new PlayerStareEvent(player, block));
+						players.remove(player);
+					}
+					else{
+						long elapsedMillis = players.get(player).getElapsedMillis();
+						elapsedMillis += elapsed;
+						players.get(player).setElapsedMillis(elapsedMillis);
+					}
 				}
 			}
 		}
 	}
 	
-//	private int calcBalancedPossibility(){
-//		int possibility = 0;
-//		long period = plugin.getPeriod();
-//		
-//	}
+	private int calcBalancedPossibility(){
+		long period = plugin.getPeriod();
+		int range = plugin.getMaxTime() - plugin.getMinTime();
+		//Provisional calculation
+		return (int) (20 / period * range * 1.5);
+	}
 
 }

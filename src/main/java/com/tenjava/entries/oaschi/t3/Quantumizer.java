@@ -9,6 +9,7 @@ import org.bukkit.scheduler.BukkitScheduler;
 
 import com.tenjava.entries.oaschi.t3.commands.CmdDisable;
 import com.tenjava.entries.oaschi.t3.commands.CmdEnable;
+import com.tenjava.entries.oaschi.t3.listeners.PlayerStareListener;
 
 public class Quantumizer extends JavaPlugin {
 	
@@ -25,8 +26,8 @@ public class Quantumizer extends JavaPlugin {
 	/**
 	 * The min/max time the player has to stare at something to trigger a random event.
 	 */
-	private int minTime;
-	private int maxTime;
+	private int minTime = 1;
+	private int maxTime = 5;
 	/**
 	 * The period of the repeating task in ticks.
 	 */
@@ -36,6 +37,11 @@ public class Quantumizer extends JavaPlugin {
 	public void onEnable(){
 		Quantumizer.plugin = this;
 		setCommandExecutors();
+		registerEvents();
+	}
+	
+	private void registerEvents(){
+		getServer().getPluginManager().registerEvents(new PlayerStareListener(), this);
 	}
 	
 	private void start(){

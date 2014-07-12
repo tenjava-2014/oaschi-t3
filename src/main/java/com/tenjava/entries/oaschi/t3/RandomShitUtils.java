@@ -31,7 +31,7 @@ public class RandomShitUtils {
 	}
 
 	private static void flashBlock(Player player, Block target){
-		
+		int a = 1;
 	}
 
 }
