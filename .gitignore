@@ -1,6 +1,8 @@
 ### Java ###
 *.class
 
+debug/
+
 # Package Files #
 *.jar
 *.war
