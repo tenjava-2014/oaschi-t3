@@ -1,3 +1,8 @@
 name: oaschi-t3
 main: com.tenjava.entries.oaschi.t3.TenJava
 version: '${project.version}'
+author: oaschi
+commands:
+  quen:
+    aliases: [quenable]
+    usage: /quen
