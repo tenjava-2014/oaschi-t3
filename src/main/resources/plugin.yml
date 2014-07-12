@@ -1,5 +1,5 @@
 name: oaschi-t3
-main: com.tenjava.entries.oaschi.t3.TenJava
+main: com.tenjava.entries.oaschi.t3.Quantumizer
 version: '${project.version}'
 author: oaschi
 commands:
