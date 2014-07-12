@@ -11,6 +11,12 @@ public class Quantumizer extends JavaPlugin {
 	public static Quantumizer plugin;
 	
 	private Logger logger = this.getLogger();
+	/**
+	 * Self-explanatory
+	 */
+	private boolean active = false;
+	
+	
 	
 	@Override
 	public void onEnable(){
@@ -27,7 +33,13 @@ public class Quantumizer extends JavaPlugin {
 	public void onDisable(){
 		
 	}
-	
-	
+
+	public boolean isActive() {
+		return active;
+	}
+
+	public void setActive(boolean active) {
+		this.active = active;
+	}
 	
 }
