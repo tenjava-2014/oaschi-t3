@@ -6,3 +6,6 @@ commands:
   quen:
     aliases: [quenable]
     usage: /quen
+  qudis:
+    aliases: [qudisable]
+    usage: /qudis
