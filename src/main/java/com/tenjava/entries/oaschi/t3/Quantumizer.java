@@ -15,14 +15,22 @@ public class Quantumizer extends JavaPlugin {
 	public static Quantumizer plugin;
 	
 	public Logger logger = this.getLogger();
-	/**
-	 * Self-explanatory
-	 */
 	private boolean active = false;
-	
 	private Mode mode = Mode.LSD;
+	/**
+	 * The max distance between a player and a potential target for an random event.
+	 */
 	private int maxDistance = 10;
 	private int taskId;
+	/**
+	 * The min/max time the player has to stare at something to trigger a random event.
+	 */
+	private int minTime;
+	private int maxTime;
+	/**
+	 * The period of the repeating task in ticks.
+	 */
+	private long period = 4;
 	
 	@Override
 	public void onEnable(){
@@ -75,6 +83,30 @@ public class Quantumizer extends JavaPlugin {
 
 	public int getTaskId() {
 		return taskId;
+	}
+
+	public int getMinTime() {
+		return minTime;
+	}
+
+	public void setMinTime(int minTime) {
+		this.minTime = minTime;
+	}
+
+	public int getMaxTime() {
+		return maxTime;
+	}
+
+	public void setMaxTime(int maxTime) {
+		this.maxTime = maxTime;
+	}
+
+	public long getPeriod() {
+		return period;
+	}
+
+	public void setPeriod(long period) {
+		this.period = period;
 	}
 	
 }
